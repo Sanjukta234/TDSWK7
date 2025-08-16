@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+
+    <!-- RevealJS core styles -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme" />
+    <!-- Syntax highlighting theme for code -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css" />
+
+    <style>
+      .footnote { font-size: 0.55em; opacity: 0.8; }
+      .tag { display:inline-block; padding: .2em .6em; border-radius: 999px; background:#222; font-size:.6em }
+      .pill { border: 1px solid #666; border-radius: 999px; padding: .2em .7em; font-size: .6em }
+      .grid { display:grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .kpi { border:1px solid #333; border-radius: 1rem; padding: .8rem; }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Title slide with animated fragments and speaker notes -->
+        <section>
+          <h2>Quarterly Earnings Report</h2>
+          <h4 class="fragment">Modern, Interactive Presentation</h4>
+          <p class="fragment">Prepared by: <strong>Technical Consultant</strong></p>
+          <p class="fragment">Contact: <strong>22f1001636@ds.study.iitm.ac.in</strong></p>
+          <div class="footnote fragment">Use ↑/↓ for vertical, ←/→ for horizontal navigation</div>
+          <aside class="notes">
+            Welcome! This deck showcases RevealJS capabilities tailored for a financial stakeholder review: fragments, Markdown, code, math, and speaker notes. Keep delivery crisp; budget 10–12 minutes.
+          </aside>
+        </section>
+
+        <!-- KPI grid with fragments -->
+        <section>
+          <h3>At-a-Glance KPIs</h3>
+          <div class="grid">
+            <div class="kpi fragment">
+              <div class="tag">Revenue</div>
+              <h2>$4.2B</h2>
+              <div class="footnote">+12% YoY</div>
+            </div>
+            <div class="kpi fragment">
+              <div class="tag">NIM</div>
+              <h2>3.2%</h2>
+              <div class="footnote">+18 bps QoQ</div>
+            </div>
+            <div class="kpi fragment">
+              <div class="tag">CET1</div>
+              <h2>13.4%</h2>
+              <div class="footnote">Well above req.</div>
+            </div>
+          </div>
+          <aside class="notes">
+            Reveal each KPI with fragments; briefly explain drivers and risk buffer.
+          </aside>
+        </section>
+
+        <!-- Markdown slide (requirement: at least one slide written in Markdown) -->
+        <section data-markdown>
+          <textarea data-template>
+## Highlights (Markdown)
+
+- **Revenue** grew **12% YoY** on retail lending and payments volume.
+- **Operating leverage** improved with disciplined cost control.
+- **Risk**: credit costs stable; coverage ratio maintained.
+- **Contact**: 22f1001636@ds.study.iitm.ac.in
+
+> Tip: Press **S** to open speaker notes.
+          </textarea>
+          <aside class="notes">This slide is authored entirely in Markdown to show content portability (e.g., from internal docs).</aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting -->
+        <section>
+          <h3>Code Sample: NPV in Python</h3>
+          <pre><code class="language-python">from typing import Iterable
+
+def npv(rate: float, cashflows: Iterable[float]) -> float:
+    """Net Present Value.
+    NPV = sum(CF_t / (1 + r)**t)
+    """
+    return sum(cf / ((1.0 + rate) ** t) for t, cf in enumerate(cashflows))
+
+print(npv(0.1, [-100, 40, 50, 60]))  # 27.10
+</code></pre>
+          <aside class="notes">Explain discounting intuition and why early cash flows are worth more.</aside>
+        </section>
+
+        <!-- Math slide (financial formulas) -->
+        <section>
+          <h3>Financial Formulas</h3>
+          <p>Net Present Value (NPV):</p>
+          <p>$$\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$$</p>
+          <p>Capital Asset Pricing Model (CAPM):</p>
+          <p>$$\mathbb{E}[R_i] = R_f + \beta_i\, (\mathbb{E}[R_m] - R_f)$$</p>
+          <aside class="notes">Relate NPV to project selection and CAPM to cost of equity.</aside>
+        </section>
+
+        <!-- Narrative slide with fragments -->
+        <section>
+          <h3>Storyline</h3>
+          <ul>
+            <li class="fragment">Top-line momentum from Retail &amp; Payments</li>
+            <li class="fragment">Margin resilience despite rate volatility</li>
+            <li class="fragment">Prudent risk: stable delinquencies</li>
+            <li class="fragment">Capital headroom supports buybacks</li>
+          </ul>
+          <aside class="notes">Use this as your talk track. Pause after each fragment for discussion.</aside>
+        </section>
+
+        <!-- Closing slide -->
+        <section>
+          <h2>Q&amp;A</h2>
+          <p><span class="pill">Email</span> 22f1001636@ds.study.iitm.ac.in</p>
+          <aside class="notes">Invite questions; have appendix data handy if extending.</aside>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- RevealJS core & plugins -->
+    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      });
+    </script>
+  </body>
+</html>
