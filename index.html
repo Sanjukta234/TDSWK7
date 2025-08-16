@@ -60,7 +60,7 @@
           </aside>
         </section>
 
-        <!-- Markdown slide (requirement: at least one slide written in Markdown) -->
+        <!-- Markdown slide -->
         <section data-markdown>
           <textarea data-template>
 ## Highlights (Markdown)
@@ -75,7 +75,7 @@
           <aside class="notes">This slide is authored entirely in Markdown to show content portability (e.g., from internal docs).</aside>
         </section>
 
-        <!-- Code sample with syntax highlighting -->
+        <!-- Code sample -->
         <section>
           <h3>Code Sample: NPV in Python</h3>
           <pre><code class="language-python">from typing import Iterable
@@ -91,52 +91,11 @@ print(npv(0.1, [-100, 40, 50, 60]))  # 27.10
           <aside class="notes">Explain discounting intuition and why early cash flows are worth more.</aside>
         </section>
 
-        <!-- Math slide (financial formulas) -->
+        <!-- Updated Math slide -->
         <section>
           <h3>Financial Formulas</h3>
+          
           <p>Net Present Value (NPV):</p>
-          <p>$$\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$$</p>
-          <p>Capital Asset Pricing Model (CAPM):</p>
-          <p>$$\mathbb{E}[R_i] = R_f + \beta_i\, (\mathbb{E}[R_m] - R_f)$$</p>
-          <aside class="notes">Relate NPV to project selection and CAPM to cost of equity.</aside>
-        </section>
-
-        <!-- Narrative slide with fragments -->
-        <section>
-          <h3>Storyline</h3>
-          <ul>
-            <li class="fragment">Top-line momentum from Retail &amp; Payments</li>
-            <li class="fragment">Margin resilience despite rate volatility</li>
-            <li class="fragment">Prudent risk: stable delinquencies</li>
-            <li class="fragment">Capital headroom supports buybacks</li>
-          </ul>
-          <aside class="notes">Use this as your talk track. Pause after each fragment for discussion.</aside>
-        </section>
-
-        <!-- Closing slide -->
-        <section>
-          <h2>Q&amp;A</h2>
-          <p><span class="pill">Email</span> 22f1001636@ds.study.iitm.ac.in</p>
-          <aside class="notes">Invite questions; have appendix data handy if extending.</aside>
-        </section>
-
-      </div>
-    </div>
-
-    <!-- RevealJS core & plugins -->
-    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
-    <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
-    <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
-    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
-
-    <script>
-      Reveal.initialize({
-        hash: true,
-        slideNumber: 'c/t',
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      });
-    </script>
-  </body>
-</html>
+          <p>$$\\mathrm{NPV} = \\sum_{t=0}^{T} \\frac{CF_t}{(1+r)^t}$$</p>
+          
+          <p>C
